@@ -7,7 +7,7 @@ var YD = new YoutubeMp3Downloader({
     "ffmpegPath": "./ffmpeg/ffmpeg.exe",        // FFmpeg binary location
     "outputPath": "./output/playlist",    // Output file location (default: the home directory)
     "youtubeVideoQuality": "highestaudio",  // Desired video quality (default: highestaudio)
-    "queueParallelism": 20,                  // Download parallelism (default: 1)
+    "queueParallelism": 5,                  // Download parallelism (default: 1)
     "progressTimeout": 2000,                // Interval in ms for the progress reports (default: 1000)
     "allowWebm": false                      // Enable download from WebM sources (default: false)
 });
@@ -22,8 +22,8 @@ YD.on("progress", function (progress) {
     //console.log(JSON.stringify(progress));
 });
 
-var lineReader = require('readline').createInterface({
-    input: require('fs').createReadStream('./input.txt')
+var lineReader = readline.createInterface({
+    input: fs.createReadStream('./input.txt')
 });
 
 
@@ -57,7 +57,7 @@ lineReader.on('line', function (line) {
 });
 
 YD.on("finished", function (err, data) {
-    fs.writeFile('./output/info.json', JSON.stringify({ 'list': list }), function (err) {
+    fs.writeFile('./output/info.json', JSON.stringify({ 'list': list, "counter": list.length }), function (err) {
         if (err) return console.log(err);
     });
 });
