@@ -7,10 +7,46 @@ async@>=0.2.9, async@^3.2.0:
   resolved "https://registry.yarnpkg.com/async/-/async-3.2.0.tgz#b3a2685c5ebb641d3de02d161002c60fc9f85720"
   integrity sha512-TR2mEZFVOj2pLStYxLht7TyfuRzaydfpxr3k9RpHIzMgw7A64dzsdqCxH1WJyQdoe8T10nDXd9wnEigmiuHIZw==
 
+base64-js@0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/base64-js/-/base64-js-0.0.2.tgz#024f0f72afa25b75f9c0ee73cd4f55ec1bed9784"
+  integrity sha1-Ak8Pcq+iW3X5wO5zzU9V7Bvtl4Q=
+
+bops@0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/bops/-/bops-0.0.6.tgz#082d1d55fa01e60dbdc2ebc2dba37f659554cf3a"
+  integrity sha1-CC0dVfoB5g29wuvC26N/ZZVUzzo=
+  dependencies:
+    base64-js "0.0.2"
+    to-utf8 "0.0.1"
+
+concat-stream@~1.0.0:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/concat-stream/-/concat-stream-1.0.1.tgz#018b18bc1c7d073a2dc82aa48442341a2c4dd79f"
+  integrity sha1-AYsYvBx9BzotyCqkhEI0GixN158=
+  dependencies:
+    bops "0.0.6"
+
 core-util-is@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
   integrity sha1-tf1UIgqivFq1eqtxQMlAdUUDwac=
+
+duplexer@~0.0.3:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/duplexer/-/duplexer-0.0.4.tgz#afcb7f1f8b8d74f820726171d5d64ac9e4a8ff20"
+  integrity sha1-r8t/H4uNdPggcmFx1dZKyeSo/yA=
+
+ffmetadata@^1.7.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/ffmetadata/-/ffmetadata-1.7.0.tgz#aaa7cfbfaa081caf42e086cc255436432cd6c046"
+  integrity sha512-9qiv40lskKAz63qJKemVxmfH3Xkp3TuXK7teQOxh69kSJDxkBu1Mzr93bSKL9fyqqZ4uo6hnZfCHb/40AEF8+A==
+  dependencies:
+    concat-stream "~1.0.0"
+    split "~0.2.6"
+    stream-combiner "0.0.2"
+    stream-filter "1"
+    through "~2.3.4"
 
 fluent-ffmpeg@2.1.2:
   version "2.1.2"
@@ -96,6 +132,27 @@ speedometer@~1.0.0:
   resolved "https://registry.yarnpkg.com/speedometer/-/speedometer-1.0.0.tgz#cd671cb06752c22bca3370e2f334440be4fc62e2"
   integrity sha1-zWccsGdSwivKM3Di8zREC+T8YuI=
 
+split@~0.2.6:
+  version "0.2.10"
+  resolved "https://registry.yarnpkg.com/split/-/split-0.2.10.tgz#67097c601d697ce1368f418f06cd201cf0521a57"
+  integrity sha1-Zwl8YB1pfOE2j0GPBs0gHPBSGlc=
+  dependencies:
+    through "2"
+
+stream-combiner@0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/stream-combiner/-/stream-combiner-0.0.2.tgz#dfe0e74675742565e76c6056788ea5c23bd97db4"
+  integrity sha1-3+DnRnV0JWXnbGBWeI6lwjvZfbQ=
+  dependencies:
+    duplexer "~0.0.3"
+
+stream-filter@1:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/stream-filter/-/stream-filter-1.0.0.tgz#3f0a4c6d5981011e9862a32afdb0df16a4b67ede"
+  integrity sha1-PwpMbVmBAR6YYqMq/bDfFqS2ft4=
+  dependencies:
+    through "~2"
+
 string_decoder@~1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/string_decoder/-/string_decoder-1.1.1.tgz#9cf1611ba62685d7030ae9e4ba34149c3af03fc8"
@@ -110,6 +167,16 @@ through2@~2.0.3:
   dependencies:
     readable-stream "~2.3.6"
     xtend "~4.0.1"
+
+through@2, through@~2, through@~2.3.4:
+  version "2.3.8"
+  resolved "https://registry.yarnpkg.com/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
+  integrity sha1-DdTJ/6q8NXlgsbckEV1+Doai4fU=
+
+to-utf8@0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/to-utf8/-/to-utf8-0.0.1.tgz#d17aea72ff2fba39b9e43601be7b3ff72e089852"
+  integrity sha1-0Xrqcv8vujm55DYBvns/9y4ImFI=
 
 truncate-utf8-bytes@^1.0.0:
   version "1.0.2"
